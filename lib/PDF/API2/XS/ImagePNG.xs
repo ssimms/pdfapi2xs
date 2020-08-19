@@ -33,7 +33,6 @@ unfilter (AV * line, AV * prev, int filter, int bpp)
     uint8_t * out_array  = (uint8_t *)malloc((line_length) * sizeof(uint8_t));
     if (in_array == NULL || out_array == NULL || prev_array == NULL) { 
       croak("Null pointer from memory allocation in ImagePNG.xs");
-      return;
     }
 
     for (int i = 0; i < line_length; i++) {
@@ -147,7 +146,6 @@ split_channels (AV * stream, int w, int h)
 
     if (in_array == NULL || out_array == NULL || dict_array == NULL) {
       croak("Null pointer from memory allocation in ImagePNG.xs");
-      return;
     }
 
     for (int i = 0; i < av_len(stream); i++) {
@@ -159,11 +157,11 @@ split_channels (AV * stream, int w, int h)
 
     // Transform the image into a new C array of bytes.
     for (int i = 0; i < w * h; i++) {
-      *(out_array + (i * 3) + 0 ) = *(in_array + (i * 4) + 0 );
-      *(out_array + (i * 3) + 1 ) = *(in_array + (i * 4) + 1 );
-      *(out_array + (i * 3) + 2 ) = *(in_array + (i * 4) + 2 );
+      *(out_array + (i * 3) + 0) = *(in_array + (i * 4) + 0);
+      *(out_array + (i * 3) + 1) = *(in_array + (i * 4) + 1);
+      *(out_array + (i * 3) + 2) = *(in_array + (i * 4) + 2);
 
-      *(dict_array + i) = *(in_array + (i * 4) + 3 );
+      *(dict_array + i) = *(in_array + (i * 4) + 3);
     }
 
     // Put the results back into a new Perl AV.
