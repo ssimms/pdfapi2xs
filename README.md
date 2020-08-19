@@ -1,5 +1,7 @@
 # pdfapi2xs
 
-perl Makefile.PL
-make
-make install
+`perl Makefile.PL`
+
+`make`
+
+`make install`
