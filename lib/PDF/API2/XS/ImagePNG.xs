@@ -85,7 +85,7 @@ unfilter (AV * line, AV * prev, int filter, int bpp)
         for (int i = 0; i < line_length; i++) {
           uint8_t sub;
           if (i < bpp) {
-            sub = *(in_array + i) + (*(prev_array + i) / 2); 
+            sub = *(in_array + i) + (*(prev_array + i) / 2);
           }
           else {
             sub = *(in_array + i) + ((*(out_array + i - bpp) + *(prev_array + i)) / 2);
@@ -94,7 +94,7 @@ unfilter (AV * line, AV * prev, int filter, int bpp)
         }
         break;
 
-      case 4 : 
+      case 4 :
         for (int i = 0; i < line_length; i++) {
           uint8_t a, b, c;
           b = *(prev_array + i);
@@ -184,4 +184,3 @@ split_channels (AV * stream, int w, int h)
     RETVAL = outstream_av;
   OUTPUT:
     RETVAL
-
