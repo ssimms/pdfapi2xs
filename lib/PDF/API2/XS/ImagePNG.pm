@@ -1,5 +1,10 @@
 package PDF::API2::XS::ImagePNG;
 
+use strict;
+use warnings;
+
+# VERSION
+
 require XSLoader;
 require Exporter;
 
