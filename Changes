@@ -1,5 +1,7 @@
 {{$NEXT}}
 
+    - Removed -Ofast optimization due to compatibility issues.
+
 
 1.000     2020-08-20
 
