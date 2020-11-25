@@ -1,5 +1,7 @@
 {{$NEXT}}
 
+1.002     2020-11-24
+
     - Switched the license to be the same terms as Perl 5.
 
 
